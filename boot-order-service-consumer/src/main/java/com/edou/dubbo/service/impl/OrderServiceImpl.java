@@ -21,7 +21,8 @@ public class OrderServiceImpl implements OrderService {
 
 //    @Autowired
     //使用dubbo的注解 让他调用接口对应的暴露方法
-    @Reference
+    @Reference(url = "127.0.0.1:20890") //使用dubbo直连的方式 可以不需要注册中心
+//    @Reference
     UserService userService;
 
     @Override

@@ -29,11 +29,11 @@
         </dependency>-->
         <!--当使用springboot的时候使用以下依赖-->
         <!-- Dubbo Spring Boot Starter -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>0.2.0</version>
-        </dependency>
+        </dependency>-->
         <!--<dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>

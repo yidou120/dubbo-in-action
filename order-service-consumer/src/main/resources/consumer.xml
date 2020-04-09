@@ -6,6 +6,15 @@
     <context:component-scan base-package="com.edou.dubbo.service.impl"></context:component-scan>
     <dubbo:application name="order-service-consumer"/>
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-    <dubbo:reference interface="com.edou.dubbo.service.UserService" id="userService"/>
+
+    <!--version参数可以指定调用服务暴露的对应的版本 如果值为* 随机调用一个版本-->
+    <dubbo:reference interface="com.edou.dubbo.service.UserService" id="userService" version="*">
+        <dubbo:method name="getUserAddressList" timeout="5000" retries="3"></dubbo:method>
+    </dubbo:reference>
+    <!--配置检查提供方服务是否存在 默认检查 可以设置不检查 即使服务方不存在也不报错-->
+    <!--<dubbo:reference interface="com.edou.dubbo.service.UserService" id="userService"
+        check="false"/>-->
+    <!--还可以全局配置所有的服务方法-->
+    <dubbo:consumer check="false"/>
     <dubbo:monitor protocol="registry"></dubbo:monitor>
 </beans>

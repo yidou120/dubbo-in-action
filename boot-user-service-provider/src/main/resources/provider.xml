@@ -3,17 +3,14 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
-    <dubbo:application name="user-service-provider"/>
+    <dubbo:application name="boot-user-service-provider"/>
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-    <dubbo:protocol name="dubbo" port="20891"/>
+    <dubbo:protocol name="dubbo" port="20890"/>
 
     <!--对外提供的服务-->
     <bean id="userServiceImpl" class="com.edou.dubbo.service.impl.UserServiceImpl"/>
     <dubbo:service interface="com.edou.dubbo.service.UserService" ref="userServiceImpl" version="1.0.0"/>
 
-    <!--对外提供的服务-->
-    <bean id="userServiceImpl2" class="com.edou.dubbo.service.impl.UserServiceImpl2"/>
-    <dubbo:service interface="com.edou.dubbo.service.UserService" ref="userServiceImpl2" version="2.0.0"/>
 
     <!--从注册中心自动获取监控的服务信息-->
     <dubbo:monitor protocol="registry"></dubbo:monitor>

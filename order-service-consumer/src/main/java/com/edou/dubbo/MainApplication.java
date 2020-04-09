@@ -1,4 +1,4 @@
-package com.edou.dubbo.service.impl;
+package com.edou.dubbo;
 
 import com.edou.dubbo.service.OrderService;
 import org.springframework.context.ApplicationContext;
