@@ -3,6 +3,7 @@ package com.edou.dubbo;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.ImportResource;
 
 // 1.springboot+dubbo 使用@Service暴露服务,@Refrence引用服务,@EnableDubbo和application.xml写相关配置
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.ImportResource;
 //@EnableDubbo
 //@ImportResource(locations = "provider.xml")
 @EnableDubbo(scanBasePackages = "com.edou.dubbo")
+@EnableHystrix
 @SpringBootApplication
 public class BootUserServiceProviderApplication {
 
